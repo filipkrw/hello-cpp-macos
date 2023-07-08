@@ -1,10 +1,26 @@
+#include <SFML/Graphics.hpp>
 #include <iostream>
 
 int main()
 {
-    char name[50];
-    std::cout << "Enter your name: ";
-    std::cin >> name;
-    std::cout << "Hello " << name << std::endl;
+    sf::RenderWindow window(sf::VideoMode(900, 600), "SFML window");
+
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+            {
+                window.close();
+            }
+        }
+
+        window.clear(sf::Color::Black);
+        window.display();
+    }
+
+    std::cout << "Hello, World!" << std::endl;
+
     return 0;
 }
