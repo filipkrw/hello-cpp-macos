@@ -27,16 +27,7 @@
     {
       "type": "shell",
       "label": "C++ - Debug Multi File",
-      "command": "/usr/bin/clang++",
-      "args": [
-        "-std=c++17",
-        "-stdlib=libc++",
-        "-g",
-        "-Wall",
-        "src/*.cpp",
-        "-o",
-        "${fileDirname}/out/a.out"
-      ],
+      "command": "/usr/bin/clang++ -std=c++17 -stdlib=libc++ -g -Wall ${fileDirname}/*.cpp -o ${fileDirname}/out/a.out",
       "options": {
         "cwd": "${workspaceFolder}"
       },
